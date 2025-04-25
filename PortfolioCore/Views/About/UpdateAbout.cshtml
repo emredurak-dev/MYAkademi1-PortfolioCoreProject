@@ -1,0 +1,31 @@
+﻿@model About
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>hakkimda guncelleme sayfasi</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="AboutId" />
+    <label>unvan</label>
+    <input type="text" asp-for="Title" class="form-control" style="border:1px solid black;" />
+    <br />
+    <label>aciklama</label>
+    <input type="text" asp-for="Description" class="form-control" style="border:1px solid black;" />
+    <br />
+    <label>alt aciklama</label>
+    <input type="text" asp-for="SubDescription" class="form-control" style="border:1px solid black;" />
+    <br />
+    <label>yas</label>
+    <input type="text" asp-for="Age" class="form-control" style="border:1px solid black;" />
+    <br />
+    <label>telefon numarasi</label>
+    <input type="tel" asp-for="PhoneNumber" class="form-control" style="border:1px solid black;" />
+    <br />
+    <label>email</label>
+    <input type="email" asp-for="Email" class="form-control" style="border:1px solid black;" />
+    <br />
+    <button class="btn btn-primary">guncelle</button>
+</form>
+

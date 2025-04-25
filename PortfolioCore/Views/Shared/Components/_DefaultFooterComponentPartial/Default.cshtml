@@ -1,0 +1,25 @@
+﻿@model List<SocialMedia>
+<footer id="footer" class="footer position-relative light-background">
+	<div class="container">
+		<h3 class="sitename">emre durak</h3>
+		<p>asaigdaki linklerden bana ulasabilirsiniz.</p>
+		<div class="social-links d-flex justify-content-center">
+			@foreach (var item in Model)
+			{
+				<a href="@item.Link"><i class="@item.Icon"></i></a>
+			}
+		</div>
+		<div class="container">
+			<div class="copyright">
+				<span>copyright</span> <strong class="px-1 sitename">emre durak</strong> <span>tum haklari saklidir.</span>
+			</div>
+			<div class="credits">
+				<!-- All the links in the footer should remain intact. -->
+				<!-- You can delete the links only if you've purchased the pro version. -->
+				<!-- Licensing information: https://bootstrapmade.com/license/ -->
+				<!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+				Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distribuited by <a href="https://themewagon.com">ThemeWagon</a>
+			</div>
+		</div>
+	</div>
+</footer>

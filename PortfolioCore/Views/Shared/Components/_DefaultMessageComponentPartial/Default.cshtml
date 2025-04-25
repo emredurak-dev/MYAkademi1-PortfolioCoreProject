@@ -1,0 +1,50 @@
+﻿@model Message
+
+@if (ViewBag.Success != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '@ViewBag.Success!',
+
+            showConfirmButton: true
+
+        });
+    </script>
+}
+
+
+
+<div class="col-lg-8">
+    <form action="/SendMessage/SendMessage" method="post" data-aos="fade-up" data-aos-delay="200">
+        <div class="row gy-4">
+
+            <div class="col-md-6">
+                <input type="text" asp-for="NameSurname" class="form-control" placeholder="adiniz soyadiniz" required="">
+            </div>
+
+            <div class="col-md-6 ">
+                <input type="email" class="form-control" asp-for="Email" placeholder="mail adresiniz" required="">
+            </div>
+
+            <div class="col-md-12">
+                <input type="text" class="form-control" asp-for="Subject" placeholder="konu" required="">
+            </div>
+
+            <div class="col-md-12">
+                <textarea class="form-control" asp-for="MessageDetail" rows="6" placeholder="mesaj" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+
+
+                <button type="submit" class="btn btn-outline-primary">gonder</button>
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div><!-- End Contact Form -->

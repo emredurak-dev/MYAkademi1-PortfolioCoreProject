@@ -1,0 +1,21 @@
+﻿@model List<Feature>
+<section id="hero" class="hero section light-background">
+
+	<img src="~/MyResume-1.0.0/assets/img/hero-bg.jpg" alt="">
+	@foreach (var item in Model)
+	{
+	<div class="container" data-aos="zoom-out">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<h2>@item.NameSurname</h2>
+				<p>calisma alanlarim: <span class="typed" data-typed-items="@item.Title, @item.Title2, @item.Title3">developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+
+
+				@await Component.InvokeAsync("_DefaultSocialMediaComponentPartial")
+
+
+			</div>
+		</div>
+	</div>
+	}
+</section>

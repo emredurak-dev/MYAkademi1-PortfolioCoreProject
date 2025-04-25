@@ -1,0 +1,22 @@
+﻿@model List<Contact>
+@foreach (var item in Model)
+{
+	<div class="col-12 mt-4">
+		@{
+			var contact = Model.FirstOrDefault();
+			if (contact != null && !string.IsNullOrEmpty(contact.Location))
+			{
+				<iframe width="100%"
+						height="400"
+						style="border:0;"
+						loading="lazy"
+						allowfullscreen
+						referrerpolicy="no-referrer-when-downgrade"
+						src="@item.Location">
+				</iframe>
+			}
+		}
+	</div>
+
+	<!-- End Map -->
+}

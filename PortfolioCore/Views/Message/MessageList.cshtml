@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "MessageList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>adi soyadi</th>
+        <th>email</th>
+        <th>konu</th>
+        <th>mesaj</th>
+        <th>tarih</th>
+        <th>okundu & okunmadi</th>
+        <th>oku</th>
+        <th>sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.NameSurname</td>
+            <td>@item.Email</td>
+            <td>@item.Subject</td>
+            <td>@item.MessageDetail</td>
+            <td>@item.SendDate.ToShortDateString()</td>
+            @if (item.IsRead == true)
+            {
+                <td><a href="/Message/ChangeMessageIsReadToFalse/@item.MessageId" class="btn btn-warning">okunmadi olarak isaretle</a></td>
+            }
+            else
+            {
+                <td><a href="/Message/ChangeMessageIsReadToTrue/@item.MessageId" class="btn btn-success">okundu olarak isaretle</a></td>
+            }
+            <td><a href="/Message/OpenMessage/@item.MessageId" class="btn btn-info">mesaji goruntule</a></td>
+            <td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger">mesaji sil</a></td>
+        </tr>
+    }
+</table>

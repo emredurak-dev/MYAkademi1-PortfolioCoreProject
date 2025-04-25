@@ -1,0 +1,59 @@
+﻿@model List<Contact>
+<section id="contact" class="contact section">
+
+	<!-- Section Title -->
+	<div class="container section-title" data-aos="fade-up">
+		<h2>iletisim</h2>
+		<p>asagida ki form dan bana mail atabilirsiniz ya da adres kismindan direkt ofisime gelebilirsiniz. calisma saatlerim hafta ici her gun 09.00 - 17.00 arasidir.</p>
+	</div><!-- End Section Title -->
+
+	<div class="container" data-aos="fade" data-aos-delay="100">
+
+		<div class="row gy-4">
+
+
+			<div class="col-lg-4">
+				@foreach (var item in Model)
+				{
+
+					<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+						<i class="bi bi-geo-alt flex-shrink-0"></i>
+						<div>
+							<h3>adresim</h3>
+							<p>@item.Address</p>
+						</div>
+					</div>
+
+					<!-- End Info Item -->
+
+					<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+						<i class="bi bi-telephone flex-shrink-0"></i>
+						<div>
+							<h3>telefon numaram</h3>
+							<p>@item.PhoneNumber</p>
+						</div>
+					</div>
+
+					<!-- End Info Item -->
+
+					<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+						<i class="bi bi-envelope flex-shrink-0"></i>
+						<div>
+							<h3>mail adresim</h3>
+							<p>@item.Email</p>
+						</div>
+					</div>
+
+					<!-- End Info Item -->
+				}
+			</div>
+
+
+			@await Component.InvokeAsync("_DefaultMessageComponentPartial")
+
+			@await Component.InvokeAsync("_DefaultLocationComponentPartial")
+		</div>
+
+	</div>
+
+</section><!-- /Contact Section -->

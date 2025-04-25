@@ -1,0 +1,30 @@
+﻿@model Portfolio
+@{
+    ViewData["Title"] = "UpdatePortfolio";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>proje guncelleme sayfasi</h1>
+
+<form method="post">
+	<input type="hidden" asp-for="PortfolioId" class="form-control" />
+	<label>proje basligi</label>
+	<input type="text" asp-for="Title" class="form-control" />
+	<br />
+	<label>proje aciklamasi</label>
+	<input type="text" asp-for="Description" class="form-control" />
+	<br />
+	<label>gorsel url</label>
+	<input type="text" asp-for="ImageUrl" class="form-control" />
+	<br />
+	<label>proje kategorisi</label>
+	<select asp-for="CategoryId" asp-items="ViewBag.v" class="form-control">
+		<option value="">-- seciniz --</option>
+	</select>
+	<br />
+	<label>proje linki</label>
+	<input type="text" asp-for="Link" class="form-control" />
+	<br />
+	<button class="btn btn-primary">guncelle</button>
+</form>
+

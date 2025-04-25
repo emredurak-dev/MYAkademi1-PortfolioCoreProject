@@ -1,0 +1,19 @@
+﻿@model PortfolioCore.Entities.Skill
+
+@{
+    ViewData["Title"] = "CreateSkill";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>yeni yetenek ekleme sayfasi</h1>
+<form method="post">
+	<label>yetenek adi</label>
+	<input type="text" class="form-control" asp-for="SkillName" style="border:1px solid black;" />
+	<br />
+	<label>deger</label>
+	<input type="text" class="form-control" asp-for="SkillValue" style="border:1px solid black;" />
+	<br />
+	<button class="btn btn-primary">yetenek ekle</button>
+</form>
+
+
